@@ -86,7 +86,7 @@
     
     function retrieveCustomerDataCollection(dataEntity){
         var xhr = new XMLHttpRequest();
-        var url = "https://perfect-reducer-280407.df.r.appspot.com/api/savelog?log_data="+JSON.stringify(dataEntity);
+        var url = "https://sarahsrh.github.io/api?log_data="+JSON.stringify(dataEntity);
     
         xhr.open('GET', url, true);
         xhr.send();
