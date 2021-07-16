@@ -86,7 +86,7 @@
     
     function retrieveCustomerDataCollection(dataEntity){
         var xhr = new XMLHttpRequest();
-        var url = "https://postman-echo.com/get?testing&log_data="+JSON.stringify(dataEntity);
+        var url = "https://5093a901-c6e0-4b02-ac37-4de229598447.mock.pstmn.io/testing?log_data="+JSON.stringify(dataEntity);
     
         xhr.open('GET', url, true);
         xhr.send();
