@@ -21,19 +21,20 @@
 <br>
 <button type="button" id='product-click'>product 2</button>
 
-<amp-analytics type="googleanalytics" data-credentials="include">
+
+<amp-analytics type="gtag" data-credentials="include">
 <script type="application/json">
 {
-  "vars" : {"account": "G-7RTBF5K52W" },
-  "triggers": {
-			"pageview": {
-				 "on": "visible",
-				 "request": "pageview"
-		}
-	}
+  "vars" : {
+    "gtag_id": "G-7RTBF5K52W",
+    "config" : {
+      "G-7RTBF5K52W": { "groups": "default" }
+    }
+  }
 }
 </script>
 </amp-analytics>
+ 
  
  
 </body>
