@@ -33,7 +33,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=995889944336684&autoLogAppEvents=1"></script>
 
 <br>
-<input type = "button" id = "amppage" value = "AMP" onclick="loadAMPPage()">
+<input type = "button" id = "amppage" value = "AMP" onclick="loadAMPPage()"><br>
+<input type = "button" id = "fb" value = "Facebook" onclick="loadFB()">
+
 <br>
 <br>
 <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
@@ -78,7 +80,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 </body>
 
-
+<br>
 Test
 <script>
 var myArr= window.location.pathname;
@@ -87,6 +89,11 @@ console.log(myArr);
  function loadAMPPage()
 {
      window.location="new1.html";
+}
+
+ function loadFB()
+{
+     top.location.href="https://www.facebook.com/dialog/";
 }
 </script>
 </html>
