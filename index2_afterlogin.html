@@ -29,8 +29,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 <br>
+<input type = "button" id = "fb" value = "Home" onclick="loadHomePage()"><br><br>
 <input type = "button" id = "amppage" value = "AMP" onclick="loadAMPPage()"><br>
-<input type = "button" id = "fb" value = "Facebook" onclick="loadFB()">
 
 <br>
 <br>
@@ -41,14 +41,11 @@ Success Login
 var myArr= window.location.pathname;
 console.log(myArr);
 
- function loadAMPPage()
+ function loadHomePage()
 {
-     window.location="new1.html";
+     window.location="index.html";
 }
 
- function loadFB()
-{
-     top.location.href="https://www.facebook.com/dialog/";
-}
+
 </script>
 </html>
