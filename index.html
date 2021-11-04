@@ -38,6 +38,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <br>
 <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
 
+
 <script>
   window.fbAsyncInit = function() {
     FB.init({
@@ -60,7 +61,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
    }(document, 'script', 'facebook-jssdk'));
 </script>
 
-
+<script>
 FB.getLoginStatus(function(response) {
     statusChangeCallback(response);
 });
@@ -71,11 +72,7 @@ function checkLoginState() {
     statusChangeCallback(response);
   });
 }
-
-<fb:login-button 
-  scope="public_profile,email"
-  onlogin="checkLoginState();">
-</fb:login-button>
+</script>
 
 </body>
 
