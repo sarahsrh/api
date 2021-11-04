@@ -31,8 +31,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <br>
 <input type = "button" id = "amppage" value = "AMP" onclick="loadAMPPage()"><br>
-<input type = "button" id = "fb" value = "Login" onclick="loadFB()">
-
+<input type = "button" id = "fbmeta" value = "Facebook login with meta script" onclick="loadFBwithMeta()"><br>
+<input type = "button" id = "fb" value = "Facebook login without meta script" onclick="loadFBwithoutMeta()"><br>
 <br>
 <br>
 </body>
@@ -48,9 +48,14 @@ console.log(myArr);
      window.location="amp.html";
 }
 
- function loadFB()
+ function loadFBwithMeta()
 {
-      window.location="login.html";
+      window.location="login_with_meta.html";
+}
+
+ function loadFBwithoutMeta()
+{
+      window.location="login_without_meta.html";
 }
 </script>
 </html>
