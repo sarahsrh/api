@@ -29,48 +29,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=995889944336684&autoLogAppEvents=1"></script>
-
 <br>
 <input type = "button" id = "amppage" value = "AMP" onclick="loadAMPPage()"><br>
-<input type = "button" id = "fb" value = "Facebook" onclick="loadFB()">
+<input type = "button" id = "fb" value = "Login" onclick="loadFB()">
 
 <br>
 <br>
-<div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
-
-
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '995889944336684',
-      cookie     : true,
-      xfbml      : true,
-      version    : 'v12.0'
-    });
-      
-    FB.AppEvents.logPageView();   
-    FB.getLoginStatus(function(response){
-			if(response.session){
-				 console.log('abc'+response.session)
-			}
-			else{
-				 top.location.href="https://www.facebook.com/dialog/oauth?client_id=995889944336684&redirect_uri=https://sarahsrh.github.io/api/after_login_fb.html&scope=email,read_stream"
-			 }
-})  
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
-
-
 </body>
 
 <br>
@@ -81,12 +45,12 @@ console.log(myArr);
 
  function loadAMPPage()
 {
-     window.location="new1.html";
+     window.location="amp.html";
 }
 
  function loadFB()
 {
-     top.location.href="https://www.facebook.com/dialog/";
+      window.location="login.html";
 }
 </script>
 </html>
