@@ -62,6 +62,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <input type = "button" class="myButton" id = "amppage" value = "AMP" onclick="loadAMPPage()"><br><br><br>
 <input type = "button" class="myButton" id = "fbmeta" value = "Facebook login with meta script" onclick="loadFBwithMeta()">
 <input type = "button" class="myButton" id = "fb" value = "Facebook login without meta script" onclick="loadFBwithoutMeta()"><br>
+<input type = "button" class="myButton" id = "gtag" value = "GTAG Page" onclick="loadGTAGPage()"><br>
+
 <br>
 <br>
 </body>
@@ -84,6 +86,12 @@ console.log(myArr);
  function loadFBwithoutMeta()
 {
       window.location="login_without_meta.html";
+}
+
+
+ function loadGTAGPage()
+{
+      window.location="gtag.html";
 }
 </script>
 </html>
