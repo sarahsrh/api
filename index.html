@@ -63,6 +63,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <input type = "button" class="myButton" id = "fbmeta" value = "Facebook login with meta script" onclick="loadFBwithMeta()">
 <input type = "button" class="myButton" id = "fb" value = "Facebook login without meta script" onclick="loadFBwithoutMeta()"><br>
 <input type = "button" class="myButton" id = "gtagpage" value = "GTAG Page" onclick="loadGTAGPage()"><br>
+<input type = "button" class="myButton" id = "nonlogin" value = "Push Bukan Login" onclick="pushBukanLogin()"><br>
 
 <br>
 <br>
@@ -92,6 +93,14 @@ console.log(myArr);
  function loadGTAGPage()
 {
       window.location="gtag.html";
+}
+
+function pushBukanLogin()
+{
+	window.dataLayer.push({
+		'event':'event_bukan_login',
+		'event_action':'testerlogin'
+	});
 }
 </script>
 </html>
