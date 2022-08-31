@@ -64,6 +64,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <input type = "button" class="myButton" id = "fb" value = "Facebook login without meta script" onclick="loadFBwithoutMeta()"><br>
 <input type = "button" class="myButton" id = "gtagpage" value = "GTAG Page" onclick="loadGTAGPage()"><br>
 <input type = "button" class="myButton" id = "nonlogin" value = "Push Bukan Login" onclick="pushBukanLogin()"><br>
+<br><br>
+<input type = "button" class="myButton" id = "promo" value = "Push Promo View & Click - no promo" onclick="pushPromo()">
+<input type = "button" class="myButton" id = "product_tanpa_promo" value = "Push Prod View & Click & PDP - no promo" onclick="pushProduct()"><br>
+<input type = "button" class="myButton" id = "atcco_tanpa_promo" value = "Push ATC & CO - no promo" onclick="pushAtcCO()"><br>
+<input type = "button" class="myButton" id = "purchase_tanpa_promo" value = "Push Purchase - no promo" onclick="pushPurchase()"><br>
+<br><br>
+<input type = "button" class="myButton" id = "product_promo" value = "Push Prod View & Click & PDP - promo" onclick="pushProductPromo()"><br>
+<input type = "button" class="myButton" id = "atcco_promo" value = "Push ATC & CO - promo" onclick="pushAtcCOPromo()"><br>
+<input type = "button" class="myButton" id = "purchase_promo" value = "Push Purchase - promo" onclick="pushPurchasePromo()"><br>
 
 <br>
 <br>
@@ -105,5 +114,358 @@ function pushBukanLogin()
 		'userId':"22222"
 	});
 }
+
+function pushPromo()
+{
+	window.dataLayer.push({
+	'event':'promotionView',
+	'event_category':'ecommerce',
+	'event_action':'promo',
+	'event_label':'promo',
+	'ecommerce': {
+		'promoView': {
+		  'promotions': [                     // Array of promoFieldObjects.
+		   {
+			 'id': 'testgtm',            // ID or Name is required.
+			 'name': 'diskonlagi',
+			 'creative': 'banner1',
+			 'position': 'slot1'
+		   }]
+		}
+	}
+	});
+	window.dataLayer.push({
+	'event':'promotionClick',
+	'event_category':'ecommerce',
+	'event_action':'promo_click',
+	'event_label':'click',
+	'ecommerce': {
+		'promoClick': {
+		  'promotions': [                     // Array of promoFieldObjects.
+		   {
+			 'id': 'testgtm',            // ID or Name is required.
+			 'name': 'diskonlagi',
+			 'creative': 'banner1',
+			 'position': 'slot1'
+		   }]
+		}
+	}
+	});
+}
+function pushProduct(){
+	window.dataLayer.push({
+	'event':'view_item_list',
+	'event_category': 'ecommerce',
+	'event_action': 'list view',
+	'event_label': 'list view',
+	'ecommerce': {
+		'currencyCode': 'EUR',                       
+		'impressions': [
+		 {
+		   'name': 'celana baru',       
+		   'id': '12345',
+		   'price': '15000',
+		   'brand': 'Google',
+		   'category': 'Apparel',
+		   'variant': 'Gray',
+		   'position': '1'
+		 }]
+		}
+	});
+	
+	window.dataLayer.push({
+	  'event': 'productClick',
+	  'event_category': 'ecommerce',
+	  'event_action': 'click',
+	  'event_label': 'click',
+	  'ecommerce': {
+		'click': {
+		  'actionField': {
+			'list': 'list aja',
+			'action': 'click'
+		  },
+		  'products': [
+			{
+			  'name': 'celana baru',
+			  'id': '12345',
+			  'price': '15000',
+			  'brand': 'Google',
+			  'category': 'Apparel',
+			  'variant': 'Gray',
+			  'position': '1'
+			}
+		  ]
+		}
+	  }
+	})
+	
+	window.dataLayer.push({
+	  'event': 'pdp_view',
+	  'event_category': 'ecommerce',
+	  'event_action': 'pdp',
+	  'event_label': 'pdp',
+	  'ecommerce': {
+		'detail': {
+		  'products': [
+			{
+			  'name': 'celana baru',
+			  'id': '12345',
+			  'price': '15000',
+			  'brand': 'Google',
+			  'category': 'Apparel',
+			  'variant': 'Gray'
+			}
+		  ]
+		}
+	  }
+	})
+}
+
+ function pushAtcCO()
+{
+	window.dataLayer.push({
+	  'event': 'atc',
+	  'event_category': 'ecommerce',
+	  'event_action': 'atc',
+	  'event_label': 'atc',
+	  'ecommerce': {
+		'add': {
+		  'products': [
+			{
+			  'name': 'celana baru',
+			  'id': '12345',
+			  'price': '15000',
+			  'brand': 'Google',
+			  'category': 'Apparel',
+			  'variant': 'Gray'      
+			}
+		  ]
+		}
+	  }
+	})
+	
+	window.dataLayer.push({
+	  'event': 'begin_co',
+	  'event_category': 'ecommerce',
+	  'event_action': 'co',
+	  'event_label': 'co',
+	  'ecommerce': {
+		'checkout': {
+		  'actionField': {'step': 1, 'option': 'Visa'},
+		  'products': [
+			{
+			  'name': 'celana baru',
+			  'id': '12345',
+			  'price': '15000',
+			  'brand': 'Google',
+			  'category': 'Apparel',
+			  'variant': 'Gray'
+			}
+		  ]
+		}
+	  }
+	})
+}
+
+ function pushPurchase()
+{
+      
+	window.dataLayer.push({
+	  'event': 'purchase',
+	  'event_category': 'ecommerce',
+	  'event_action': 'purchase',
+	  'event_label': 'purchase',
+	  'ecommerce': {
+		'purchase': {
+		  'actionField': {
+			'id': 'T1T1T2',                         // Transaction ID. Required for purchases and refunds.
+			'affiliation': 'Online Store',
+			'revenue': '150000',                     // Total transaction value (incl. tax and shipping)
+			'tax':'4.90',
+			'shipping': '5.99',
+			'coupon': 'SUMMER_SALE'
+		  },
+		  'products': [{                           
+			'name': 'celana baru',     // Name or ID is required.
+			'id': '12345',
+			'price': '15000',
+			'brand': 'Google',
+			'category': 'Apparel',
+			'variant': 'Gray',
+			'quantity': '10',
+			'currency': 'IDR'
+		  }]
+		}
+	  }
+	});
+}
+
+
+
+
+//withpromo
+
+
+function pushProductPromo(){
+	window.dataLayer.push({
+	'event':'view_item_list',
+	'event_category': 'ecommercepromo',
+	'event_action': 'list view',
+	'event_label': 'list view',
+	'ecommerce': {
+		'currencyCode': 'EUR',                       
+		'impressions': [
+		 {
+		   'name': 'celana diskon',       
+		   'id': '12345',
+		   'price': '15000',
+		   'brand': 'Google',
+		   'category': 'Apparel',
+		   'variant': 'Gray',
+		   'position': '1',
+		   'promotion_name':'diskonlagi',
+		   'list': 'list list baru' 
+		 }]
+		}
+	});
+	
+	window.dataLayer.push({
+	  'event': 'productClick',
+	  'event_category': 'ecommercepromo',
+	  'event_action': 'click',
+	  'event_label': 'click',
+	  'ecommerce': {
+		'click': {
+		  'actionField': {
+			'list': 'list list baru',
+			'action': 'click'
+		  },
+		  'products': [
+			{
+			  'name': 'celana diskon',
+			  'id': '12345',
+			  'price': '15000',
+			  'brand': 'Google',
+			  'category': 'Apparel',
+			  'variant': 'Gray',
+			  'position': '1',
+			  'promotion_name':'diskonlagi',
+			  'list': 'list list baru' 
+			}
+		  ]
+		}
+	  }
+	})
+	
+	window.dataLayer.push({
+	  'event': 'pdp_view',
+	  'event_category': 'ecommercepromo',
+	  'event_action': 'pdp',
+	  'event_label': 'pdp',
+	  'ecommerce': {
+		'detail': {
+		  'products': [
+			{
+			  'name': 'celana diskon',
+			  'id': '12345',
+			  'price': '15000',
+			  'brand': 'Google',
+			  'category': 'Apparel',
+			  'variant': 'Gray',
+			  'promotion_name':'diskonlagi',
+			  'list': 'list list baru' 
+			}
+		  ]
+		}
+	  }
+	})
+}
+
+ function pushAtcCOPromo()
+{
+	window.dataLayer.push({
+	  'event': 'atc',
+	  'event_category': 'ecommercepromo',
+	  'event_action': 'atc',
+	  'event_label': 'atc',
+	  'ecommerce': {
+		'add': {
+		  'products': [
+			{
+			  'name': 'celana diskon',
+			  'id': '12345',
+			  'price': '15000',
+			  'brand': 'Google',
+			  'category': 'Apparel',
+			  'variant': 'Gray',
+			  'promotion_name':'diskonlagi',
+			  'list': 'list list baru'       
+			}
+		  ]
+		}
+	  }
+	})
+	
+	window.dataLayer.push({
+	  'event': 'begin_co',
+	  'event_category': 'ecommercepromo',
+	  'event_action': 'co',
+	  'event_label': 'co',
+	  'ecommerce': {
+		'checkout': {
+		  'actionField': {'step': 1, 'option': 'Visa'},
+		  'products': [
+			{
+			  'name': 'celana diskon',
+			  'id': '12345',
+			  'price': '15000',
+			  'brand': 'Google',
+			  'category': 'Apparel',
+			  'variant': 'Gray',
+			  'promotion_name':'diskonlagi',
+			  'list': 'list list baru' 
+			}
+		  ]
+		}
+	  }
+	})
+}
+
+ function pushPurchasePromo()
+{
+      
+	window.dataLayer.push({
+	  'event': 'purchase',
+	  'event_category': 'ecommercepromo',
+	  'event_action': 'purchase',
+	  'event_label': 'purchase',
+	  'ecommerce': {
+		'purchase': {
+		  'actionField': {
+			'id': 'T1T1T2',                         // Transaction ID. Required for purchases and refunds.
+			'affiliation': 'Online Store',
+			'revenue': '150000',                     // Total transaction value (incl. tax and shipping)
+			'tax':'4.90',
+			'shipping': '5.99',
+			'coupon': 'SUMMER_SALE'
+		  },
+		  'products': [{                           
+			'name': 'celana diskon',     // Name or ID is required.
+			'id': '12345',
+			'price': '15000',
+			'brand': 'Google',
+			'category': 'Apparel',
+			'variant': 'Gray',
+			'quantity': '10',
+			'currency': 'IDR',
+			'promotion_name':'diskonlagi',
+			'list': 'list list baru' 
+		  }]
+		}
+	  }
+	});
+}
+
+
 </script>
 </html>
