@@ -59,7 +59,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 <br>
-<input type = "button" class="myButton" id = "amppage" value = "AMP" onclick="loadAMPPage()"><br><br><br>
+<input type = "button" class="myButton" id = "amppage" value = "AMP" onclick="loadAMPPage()">
+<input type = "button" class="myButton" id = "enhancedconv" value = "ECL" onclick="loadECLPage()"><br><br><br>
 <input type = "button" class="myButton" id = "fbmeta" value = "Facebook login with meta script" onclick="loadFBwithMeta()">
 <input type = "button" class="myButton" id = "fb" value = "Facebook login without meta script" onclick="loadFBwithoutMeta()"><br>
 <input type = "button" class="myButton" id = "gtagpage" value = "GTAG Page" onclick="loadGTAGPage()"><br>
@@ -88,6 +89,11 @@ console.log(myArr);
  function loadAMPPage()
 {
      window.location="amp.html";
+}
+
+function loadECLPage()
+{
+     window.location="ecl.html";
 }
 
  function loadFBwithMeta()
