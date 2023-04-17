@@ -1,3 +1,12 @@
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/momentjs/2.14.1/moment-with-locales.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.standalone.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/js/standalone/selectize.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/css/selectize.bootstrap3.min.css">
+
 <html>
 <head>
 <title>ECL Page Tester</title>
@@ -225,8 +234,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <label for="phone">Phone Number: </label>
     <input type="phone" name="phone" id="phone" required>
   </div><br>
-    <input type="button" name="next" class="next action-button" value="Submit"
-	<br>
+    <input type="button" name="next" class="next action-button" value="Submit" onClick="submitForm()">
 	<input type = "button" name="conversion" class="next action-button" value="Conversion" onclick="pushPurchaseDatalayer()"><br><br><br>
 	<br>
 </form>
@@ -235,6 +243,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>
 var myArr= window.location.pathname;
 console.log(myArr);
+
+function submitForm() {
+var first_name = $("#first_name").val();
+var last_name = $("#last_name").val();
+var email = $("#email").val();
+var phone = $("#phone").val();
+
+window.dataLayer.push({
+	  'event': 'leads_data',
+	  'first_name': first_name,
+	  'last_name': last_name,
+	  'email': email,
+	  'phone': phone
+	});
+
+
+<!-- var formData = $("#msform").serializeArray(); -->
+<!-- let csv = "data:text/csv;charset=utf-8,"; // accept data as CSV -->
+
+<!-- formData.forEach(function(item) { -->
+<!-- console.log(item.value); -->
+  <!-- csv += item.value + ";"; // concat form value on csv var and add ; to create columns (you can change to , if want) -->
+<!-- }); -->
+
+<!-- var encodedUri = encodeURI(csv); -->
+
+<!-- // if you want to download -->
+<!-- var downloadLink = document.createElement("a"); -->
+<!-- downloadLink.setAttribute("download", "FILENAME.csv"); -->
+<!-- downloadLink.setAttribute("href", encodedUri); -->
+<!-- document.body.appendChild(downloadLink); // Required for FF -->
+<!-- downloadLink.click(); -->
+<!-- downloadLink.remove(); -->
+
+}
+
 
  function pushPurchaseDatalayer()
 {
