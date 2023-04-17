@@ -301,34 +301,61 @@ function submitForm() {
 
  function pushPurchaseDatalayer()
 {
-     window.dataLayer.push({
-	  'event': 'purchase',
-	  'event_category': 'ecommerce',
-	  'event_action': 'purchase',
-	  'event_label': 'purchase',
-	  'ecommerce': {
-		'purchase': {
-		  'actionField': {
-			'id': 'T1T1T2',                         // Transaction ID. Required for purchases and refunds.
-			'affiliation': 'Online Store',
-			'revenue': '150000',                     // Total transaction value (incl. tax and shipping)
-			'tax':'4.90',
-			'shipping': '5.99',
-			'coupon': 'SUMMER_SALE'
-		  },
-		  'products': [{                           
-			'name': 'celana baru',     // Name or ID is required.
-			'id': '12345',
-			'price': '15000',
-			'brand': 'Google',
-			'category': 'Apparel',
-			'variant': 'Gray',
-			'quantity': '10',
-			'currency': 'IDR'
-		  }]
-		}
-	  }
-	});
+document.getElementById('alert').innerHTML = '';
+    if($('#first_name').val()==''){
+      document.getElementById('alert').innerHTML = 'Please input first name!';
+    }
+    else if($('#last_name').val()==''){
+      document.getElementById('alert').innerHTML = 'Please input last name!';
+    }
+    else if($('#email').val()==''){
+      document.getElementById('alert').innerHTML = 'Please input email!';
+    }
+    else if($('#phone').val()==''){
+      document.getElementById('alert').innerHTML = 'Please input phone number!';
+    }
+    else{
+		document.getElementById('alert').innerHTML = '';
+		var first_name = $("#first_name").val();
+		var last_name = $("#last_name").val();
+		var email = $("#email").val();
+		var phone = $("#phone").val();
+		
+		 window.dataLayer.push({
+		  'event': 'purchase',
+		  'event_category': 'ecommerce',
+		  'event_action': 'purchase',
+		  'event_label': 'purchase',
+		  'first_name': first_name,
+		  'last_name': last_name,
+		  'email': email,
+		  'phone': phone,
+		  'country': "Indonesia",
+		  'postal_code': "11480",
+		  'ecommerce': {
+			'purchase': {
+			  'actionField': {
+				'id': 'T1T1T2',                         // Transaction ID. Required for purchases and refunds.
+				'affiliation': 'Online Store',
+				'revenue': '150000',                     // Total transaction value (incl. tax and shipping)
+				'tax':'4.90',
+				'shipping': '5.99',
+				'coupon': 'SUMMER_SALE'
+			  },
+			  'products': [{                           
+				'name': 'celana baru',     // Name or ID is required.
+				'id': '12345',
+				'price': '15000',
+				'brand': 'Google',
+				'category': 'Apparel',
+				'variant': 'Gray',
+				'quantity': '10',
+				'currency': 'IDR'
+			  }]
+			}
+		  }
+		});
+	}
 }
 
 </script>
