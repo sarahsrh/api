@@ -233,7 +233,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="form-example">
     <label for="phone">Phone Number: </label>
     <input type="phone" name="phone" id="phone" required>
-  </div><br>
+  </div>
+   <div id="alert" class='alert'></div> 
     <input type="button" name="next" class="next action-button" value="Submit" onClick="submitForm()">
 	<input type = "button" name="conversion" class="next action-button" value="Conversion" onclick="pushPurchaseDatalayer()"><br><br><br>
 	<br>
@@ -245,19 +246,35 @@ var myArr= window.location.pathname;
 console.log(myArr);
 
 function submitForm() {
-var first_name = $("#first_name").val();
-var last_name = $("#last_name").val();
-var email = $("#email").val();
-var phone = $("#phone").val();
+ document.getElementById('alert').innerHTML = '';
+    if($('#first_name').val()==''){
+      document.getElementById('alert').innerHTML = 'Please input first name!';
+    }
+    else if($('#last_name').val()==''){
+      document.getElementById('alert').innerHTML = 'Please input last name!';
+    }
+    else if($('#email').val()==''){
+      document.getElementById('alert').innerHTML = 'Please input email!';
+    }
+    else if($('#phone').val()==''){
+      document.getElementById('alert').innerHTML = 'Please input phone number!';
+    }
+    else{
+		document.getElementById('alert').innerHTML = '';
+		var first_name = $("#first_name").val();
+		var last_name = $("#last_name").val();
+		var email = $("#email").val();
+		var phone = $("#phone").val();
 
-window.dataLayer.push({
-	  'event': 'leads_data',
-	  'first_name': first_name,
-	  'last_name': last_name,
-	  'email': email,
-	  'phone': phone
-	});
-
+		window.dataLayer.push({
+		  'event': 'leads_data',
+		  'first_name': first_name,
+		  'last_name': last_name,
+		  'email': email,
+		  'phone': phone
+		});
+	}
+}
 
 <!-- var formData = $("#msform").serializeArray(); -->
 <!-- let csv = "data:text/csv;charset=utf-8,"; // accept data as CSV -->
@@ -277,7 +294,6 @@ window.dataLayer.push({
 <!-- downloadLink.click(); -->
 <!-- downloadLink.remove(); -->
 
-}
 
 
  function pushPurchaseDatalayer()
