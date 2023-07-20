@@ -145,24 +145,12 @@ const customDestination = (customUrl: string): DestinationPlugin => {
     },
   };
 };
-}
+
 
 amplitude.init('6d8f9e3417d0187d3bcdc3890aa49789');
-amplitude.add(myDestinationPlugin('https://googletagmanager.com'));
-{
-
-const eventProperties = {
-  'event_category': 'dari_amplitude',
-};
-amplitude.track('generalEventAmpli', eventProperties);
-	window.dataLayer.push({
-		'event':'generalEvent',
-		'event_category': "dari_code",
-		'event_action': "clickcc",
-		'event_label':123456,
-		'userId':"22222"
-	});
+amplitude.add(myDestinationPlugin('https://googletagmanager.com
 }
+
 
 function pushPromo()
 {
