@@ -118,7 +118,7 @@ function loadECLPage()
       window.location="gtag.html";
 }
 
-function pushBukanLogin()
+function pushBukanLogin(){
 const customDestination = (customUrl: string): DestinationPlugin => {
   return {
     type: 'destination',
@@ -145,7 +145,7 @@ const customDestination = (customUrl: string): DestinationPlugin => {
     },
   };
 };
-
+}
 
 amplitude.init('6d8f9e3417d0187d3bcdc3890aa49789');
 amplitude.add(myDestinationPlugin('https://googletagmanager.com'));
