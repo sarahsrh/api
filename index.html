@@ -119,36 +119,17 @@ function loadECLPage()
 }
 
 function pushBukanLogin(){
-const customDestination = (customUrl: string): DestinationPlugin => {
-  return {
-    type: 'destination',
-    execute: async (event: Event) => {
-      const payload = {
-        k: 'apikey',
-        d: event,
-      };
-
-      const response = await fetch(customUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: '*/*',
-        },
-        body: JSON.stringify(payload),
-      });
-
-      return {
-        code: response.status,
-        event: event,
-        message: response.statusText,
-      };
-    },
-  };
+const eventProperties = {
+  'event_category': 'dari_amplitude',
 };
-
-
-amplitude.init('6d8f9e3417d0187d3bcdc3890aa49789');
-amplitude.add(myDestinationPlugin('https://googletagmanager.com
+amplitude.track('generalEventAmpli', eventProperties);
+	window.dataLayer.push({
+		'event':'generalEvent',
+		'event_category': "dari_code",
+		'event_action': "clickcc",
+		'event_label':123456,
+		'userId':"22222"
+	});
 }
 
 
