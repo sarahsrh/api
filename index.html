@@ -119,6 +119,36 @@ function loadECLPage()
 }
 
 function pushBukanLogin()
+const customDestination = (customUrl: string): DestinationPlugin => {
+  return {
+    type: 'destination',
+    execute: async (event: Event) => {
+      const payload = {
+        k: 'apikey',
+        d: event,
+      };
+
+      const response = await fetch(customUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: '*/*',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      return {
+        code: response.status,
+        event: event,
+        message: response.statusText,
+      };
+    },
+  };
+};
+
+
+amplitude.init('6d8f9e3417d0187d3bcdc3890aa49789');
+amplitude.add(myDestinationPlugin('https://googletagmanager.com'));
 {
 
 const eventProperties = {
