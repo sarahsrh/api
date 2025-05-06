@@ -91,7 +91,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <input type = "button" class="myButton" id = "fb" value = "Facebook login without meta script" onclick="loadFBwithoutMeta()"><br>
 <input type = "button" class="myButton" id = "gtagpage" value = "GTAG Page" onclick="loadGTAGPage()"><br>
 <input type = "button" class="myButton" id = "nonlogin" value = "Push Bukan Login" onclick="pushBukanLogin()"><br>
-<input type = "button" class="myButton" id = "testuserprop" value = "Test User Prop"><br>
+<input type = "button" class="myButton" id = "testuserprop" value = "Test User Prop" onclick="loadTestF()><br>
 
 <br><br>
 <input type = "button" class="myButton" id = "promo" value = "Push Promo View & Click - no promo" onclick="pushPromo()">
@@ -115,6 +115,11 @@ console.log(myArr);
  function loadAMPPage()
 {
      window.location="amp.html";
+}
+
+ function loadTestF()
+{
+     window.location="test_f.html";
 }
 
  function loadAdsTXT()
